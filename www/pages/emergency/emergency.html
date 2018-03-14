@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+	<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+<link rel= "stylesheet" type="text/css" href="dv.css">
+<style type= "text/css">
+@media screen and (min-height: 320px) {
+	#emergency {
+		background-size: 100% 100%; padding-left: 0px; padding-right: 0px;
+		padding-top: 0px; padding-bottom: 0px;
+		min-height: 640px;
+        background-color: #26959e;
+
+	}
+	#skip{
+		padding-top: 559px;
+		padding-right: 165px;
+		padding-bottom: 2px;
+		padding-left: 165px; 
+	}
+
+    #now {padding-top: 15px;}
+
+    .formText {color: #fff; padding-left:25px;}
+
+    .emergencyForm {
+        background: #990099;
+    }
+    
+#selectList {
+    width: 270px;
+    height: 34px;
+    -ms-border-radius: 10px 10px;
+    -webkit-border-radius: 10px 10px;
+    -moz-border-radius: 10px 10px;
+    -o-border-radius: 10px 10px;
+}
+
+#textBox {
+    width: 270px;
+    height: 34px;
+    -ms-border-radius: 10px 10px;
+    -webkit-border-radius: 10px 10px;
+    -moz-border-radius: 10px 10px;
+    -o-border-radius: 10px 10px;
+}
+
+#describe {
+    width: 270px;
+    height: 74px;
+    -ms-border-radius: 10px 10px;
+    -webkit-border-radius: 10px 10px;
+    -moz-border-radius: 10px 10px;
+    -o-border-radius: 10px 10px;
+}
+
+.submit {
+	width: 110px;
+	height: 54px;
+    -ms-border-radius: 15px 15px;
+    -webkit-border-radius: 15px 15px;
+    -moz-border-radius: 15px 15px;
+    -o-border-radius: 15px 15px;   
+}
+
+}
+</style>
+    <title>Emergency Report</title>
+<link rel= "icon" href= "dvLogo.png">
+	</head>
+	<body>
+		<div id="emergency"><div id="now"> <h1>Emergency</h1>
+			<span><form action="" method="post" class="emergencyForm">
+                <div class="formText">Type of Abuse<br>&nbsp&nbsp&nbsp
+            <select id="selectList">
+                <option>Select</option>
+                <option>Domestic Violence</option>
+                <option>Sexual Abuse</option>
+            </select>
+            <br>Category<br>&nbsp&nbsp&nbsp<select id="selectList" placeholder= "Select">
+                    <option>Select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                 </select>
+            <br>Relationship with abuser<br>&nbsp&nbsp&nbsp
+            <select id="selectList" placeholder= "Select">
+                    <option>Select</option>
+                    <option>Husband</option>
+                    <option>Wife</option>
+                    <option>Brother</option>
+                    <option>Sister</option>
+                    <option>Employer</option>
+                    <option>Lecturer</option>
+                    <option>Relation</option>
+                    <option>Family Friend</option>
+                    <option>Other</option>
+                 </select>
+            <br>Location<br>&nbsp&nbsp&nbsp
+            <input id="textBox" placeholder= "Address No."> </input>
+            <br>Phone Number<br>&nbsp&nbsp&nbsp
+            <input id="textBox" placeholder= "Home/Mobile No."> </input>
+            <br>Any eye witness?<br>&nbsp&nbsp&nbsp
+            <select id="selectList" placeholder= "Select">
+                    <option>Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                 </select>
+            <br>Description<br>&nbsp&nbsp&nbsp
+            <input id="describe" placeholder= "Tell us your story"> </input>
+            <br><br>&nbsp&nbsp&nbsp&nbsp
+                <button class="submit">Report</button>
+                 OR <a href="sign/sign.html">Log in</a>
+            
+        </form></span></div>
+		</div>
+		<script type= "text/javascript" src="dv.js">
+		</script>
+	</body>
+</html>
